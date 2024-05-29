@@ -1,4 +1,4 @@
-name: github artifact test
+name: github artifact test1
 
 on:
   push:
