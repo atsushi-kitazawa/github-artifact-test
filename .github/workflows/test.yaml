@@ -26,4 +26,4 @@ jobs:
           name: datetime
       
       - name: echo artifact
-        runs: echo datetime.txt
+        run: echo datetime.txt
