@@ -1,0 +1,29 @@
+name: github artifact test
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  artifact-test:
+    name: artifact-test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: output datetime
+        run: date >  datetime.txt
+
+      - name: upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: datetime
+          path: datetime.txt
+      
+      - name: download artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: datetime
+      
+      - name: echo artifact
+        runs: echo datetime.txt
